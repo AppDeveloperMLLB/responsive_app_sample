@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:responsive_app_sample/user.dart';
 
 class UserListView extends StatelessWidget {
@@ -19,7 +20,10 @@ class UserListView extends StatelessWidget {
         return ListTile(
           title: Text(
             user.name,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontSize:
+                      Theme.of(context).textTheme.titleMedium!.fontSize!.sp,
+                ),
           ),
           onTap: () async {
             onTap?.call(user);
